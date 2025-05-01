@@ -6,11 +6,11 @@ function Register() {
 
     return (
         <>
-        <main className='m-0 p-0 flex flex-col overflow-hidden bg-baseBackground'>
+        <main className='m-0 p-0 flex flex-col bg-baseBackground min-h-screen'>
             <Navbar />
-            <div className='flex justify-center h-screen items-center'>
+            <section className='flex container m-auto py-32 lg:py-0 px-4'>
                 <RegisterForm />
-            </div>
+            </section>
         </main>
         </>
     )

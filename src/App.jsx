@@ -6,7 +6,7 @@ import Register from './components/pages/Register.jsx'
 import Home from './components/pages/Home.jsx'
 
 function App() {
-
+  
 
  return (
     <>
