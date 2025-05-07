@@ -1,7 +1,17 @@
 import React from 'react';
 
-function Card({ imageUrl, title, description, profile, status, ratingIcon, rating, profileIcon}) {
-  // const contentDescription = ()
+function Card({ 
+  imageUrl, 
+  title, 
+  description, 
+  profile, status, 
+  ratingIcon, 
+  rating, 
+  profileIcon,
+  price
+}) 
+
+{
 
 
   return (
@@ -80,7 +90,7 @@ function Card({ imageUrl, title, description, profile, status, ratingIcon, ratin
         </div>
 
         <div>
-          <h4 className='text-primary-default'>Rp 300K</h4>
+          <h4 className='text-primary-default'>{price || "Rp 300K"}</h4>
         </div>
       </div>
 

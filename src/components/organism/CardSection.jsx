@@ -1,8 +1,14 @@
 import React, { useState, useMemo, Profiler } from 'react';
+import { useNavigate } from 'react-router';
 import Card from '../molecules/Card.jsx';
 
 function CardSection () {
   const [activeCategory, setActiveCategory] = useState('semua');
+  const navigate = useNavigate();
+
+  const toAdmin = () => {
+    navigate('/admin')
+  }
 
   const categories = [
     { id: 'semua', name: 'Semua Kelas' },
@@ -24,6 +30,7 @@ function CardSection () {
       status: "Senior Accountant di ",
       ratingIcon: "src/assets/images/yellow-star.svg",
       rating: 4.5,
+      price: "300K"
     },
     {
       id: 2,
@@ -97,7 +104,7 @@ function CardSection () {
           <p className='text-textDark-secondary mb-6'>Jelajahi Dunia Pengetahuan Melalui Pilihan Kami</p>
           
           <div className='relative mb-8 overflow-hidden '>
-            <div className='flex overflow-x-auto pb-3 hide-scrollbar'>
+            <div className='flex overflow-x-auto pb-3 hide-scrollbar justify-between'>
               <div className='flex gap-6 min-w-max'>
                 {categories.map((category) => (
                   <div key={category.id} className="relative">
@@ -124,6 +131,13 @@ function CardSection () {
                   </div>
                 ))}
               </div>
+              <button
+                type='button'
+                onClick={toAdmin}
+                className='text-white bg-primary-default rounded-2xl p-3'
+              >
+                Admin
+              </button>
             </div>
           </div>
         
@@ -141,6 +155,7 @@ function CardSection () {
               status={card.status}
               ratingIcon={card.ratingIcon}
               rating={card.rating}
+              price={card.price}
             />
           ))
         ) : (
